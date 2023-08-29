@@ -1,0 +1,81 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    background-color: #24A65B;
+    height: 20vw;
+    width: 80vw;
+    object-fit: cover;
+    margin-top: 7vw;
+    border-radius: 0.5vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.clasification{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+    gap: 1vw;
+}
+
+.clasificacionCard{
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 80vw;
+    border-radius: 0.5vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+}
+
+.teamInfo{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.position{
+    margin-left: 1vw;
+}
+
+.teamName{
+    opacity: 0.5;
+}
+
+.clasificacionCard img{
+    height: 2vw;
+}
+
+.points{
+    display: flex;
+    width: 80%;
+    justify-content: end;
+    gap: 1vw;
+    margin-right: 1vw;
+    font-weight: bold;
+}
+
+.points p{
+    opacity: 0.4;
+}
+
+.title{
+    margin-top: 1vw;
+    width: 80vw;
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        margin-top: 5vw;
+    }
+    .title{
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+}

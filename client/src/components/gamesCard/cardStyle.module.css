@@ -1,0 +1,312 @@
+.clasification{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.7vw;
+    gap: 1vw;
+    font-size: 1vw;
+}
+
+.clasificacionCard{
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 80vw;
+    border-radius: 0.5vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    gap: 4vw;
+}
+
+.teamInfo{
+    max-width: 70%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-left: 4vw;
+    gap: 1vw;
+    overflow: auto;
+}
+
+.teamName{
+    opacity: 0.5;
+    font-weight: bolder;
+}
+
+.teamPicture{
+    height: 2.5vw;
+    width: 2.5vw;
+    object-fit: contain;
+}
+
+.icons{
+    height: 2vw;
+    width: 2vw;
+}
+
+.gameInfo{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    font-size: 1vw;
+}
+
+.gameInfo div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    opacity: 0.5;
+}
+
+.button{
+    min-width: 5vw;
+    width: fit-content;
+    display: flex;
+    justify-content: end;
+    margin-right: 5vw;
+    font-weight: bolder;
+    opacity: 0.5;
+}
+
+.buttonAdmin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 3vw;
+    width: 6vw;
+    position: absolute;
+    left: 2vw;
+    background-color: rgb(2, 158, 2);
+    color: white;
+    border: none;
+    border-radius: 0.2vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.buttonAdmin:hover{
+    transform: scale(1.1);
+}
+
+.adminPanel{
+    overflow: auto;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.4vw;
+    color: white;
+    border: 2px solid #E5E5E5;
+    padding-top: 1vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+    background-color: rgb(11, 124, 11);
+    padding: 1vw;
+    border-radius: 0.4vw;
+}
+
+.adminPanel select{
+    background-color: white;
+    height: 3vw;
+    width: 20vw;
+    border-radius: 0.2vw;
+}
+
+.adminPanel input{
+    height: 3vw;
+    width: 3vw;
+    border-radius: 0.2vw;
+    border: none;
+    margin: 0.4vw;
+}
+
+.close{
+    height: 3vw;
+    width: 3vw;
+    border-radius: 0.2vw;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winnerSelect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.addButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
+
+.addButton button{
+    height: 2vw;
+    background-color: rgb(11, 124, 11);
+    color: white;
+    border: none;
+    margin: 0.4vw;
+    border-radius: 0.2vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.250);
+    cursor: pointer;
+}
+
+.sendDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.send{
+    height: 3vw;
+    width: 78%;
+    background-color: rgb(11, 124, 11);
+    color: white;
+    border: none;
+    margin: 0.4vw;
+    border-radius: 0.2vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.250);
+    cursor: pointer;
+    font-size: 1.2vw;
+    transition: 0.1s;
+}
+
+.send:hover{
+    transform: scale(1.1);
+}
+
+.division{
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bolder;
+    margin: 1vw;
+    color: black;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 800px) {
+    .clasification p{
+        font-size: 1vw;
+    }
+    .adminPanel{
+        margin-top: 2vw;
+    }
+    .addButton button{
+        width: fit-content;
+        height: fit-content;
+        font-size: 2vw;
+    }
+    .buttonAdmin{
+        font-size: 1vw;
+    }
+    .button{
+        font-size: 1vw;
+    }
+    .send{
+        width: fit-content;
+        height: fit-content;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .adminPanel{
+        margin-top: 9vw;
+    }
+    .teamPicture{
+        height: 4vw;
+        width: 4vw;
+    }
+    .gameInfo{
+        width: 30vw;
+    }
+    .gameInfo p{
+        font-size: 1.5vw;
+    }
+    .button{
+        width: 6vw;
+        font-size: 1.3vw;
+    }
+    .teamInfo p{
+        font-size: 2vw;
+    }
+    .addButton button{
+        font-size: 3vw;
+        height: fit-content;
+    }
+    .send{
+        font-size: 3vw;
+        height: fit-content;
+        width: fit-content;
+    }
+    .buttonAdmin{
+        font-size: 1vw;
+    }
+    .button{
+        font-size: 1vw;
+    }
+    .clasificacionCard .division{
+        font-size: 3vw;
+    }
+    .winnerSelect select{
+        width: 40vw;
+        height: 4vw;
+        font-size: 3vw;
+    }
+    .winnerSelect select option{
+        font-size: 3vw;
+    }
+    .options select{
+        width: 40vw;
+        height: 5vw;
+        font-size: 3vw;
+    }
+    .options select option{
+        font-size: 3vw;
+    }
+    .options p{
+        font-size: 3vw;
+    }
+    .options input{
+        width: 5vw;
+        height: 5vw;
+        font-size: 3vw;
+    }
+    .close{
+        height: 5vw;
+        width: 5vw;
+        font-size: 3vw;
+    }
+}

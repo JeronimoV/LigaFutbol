@@ -1,0 +1,105 @@
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding-left: 2vw;
+    height: 3vw;
+    gap: 2vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 50;
+}
+
+.selectDiv{
+    height: 100%;
+    cursor: pointer;
+}
+
+.selectDivActivated{
+    height: 100%;
+    cursor: pointer;
+}
+
+.selectDivActivated div{
+    background-color: #2DCC70;
+    height: 0.3vw;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+
+.selectDivActivated .link{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.selectDiv .link{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    transition: 0.1s;
+    text-decoration: none;
+    color: black;
+}
+
+.linkLogin{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    transition: 0.1s;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    right: 2vw;
+}
+
+.select{
+    background-color: #2DCC70;
+    height: 0vw;
+    transition: 0.1s;
+}
+
+.selectDiv:hover > .select{
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    height: 0.3vw;
+}
+
+.selectDiv:hover > .link {
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .link{
+        font-size: 1.2vw;
+    }
+    .linkLogin{
+        font-size: 1.2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        height: 10vw;
+        gap: 5vw;
+    }
+    .selectDivActivated div{
+        height: 0.5vw;
+    }
+    .selectDiv:hover > .select{
+        height: 0.5vw;
+    }
+    .link{
+        font-size: 2.5vw;
+    }
+    .linkLogin{
+        font-size: 2.5vw;
+    }
+}

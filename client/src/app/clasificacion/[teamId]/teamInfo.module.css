@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vw;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+
+.header img{
+    height: 20vw;
+    width: 20vw;
+    object-fit: contain;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamName{
+    font-size: 5vw;
+}
+
+.points{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7vw;
+    opacity: 0.5;
+}
+
+.cards{
+    margin-top: 5vw;
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        margin-top: 15vw;
+    }
+}

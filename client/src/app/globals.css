@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+}
+
+html{
+    background-color: #E5E5E5;
+}
+
+@media screen and (max-width: 800px) {
+    html p{
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html p{
+        font-size: 2vw;
+    }
+}

@@ -12,11 +12,11 @@ const Partidos = () => {
     const [dataToSend, setDataToSend] = useState(null)
 
     const getTeams = async() => {
-        await fetch("http://localhost:3001/team").then(response => response.json()).then(response => setAllTeams(response))
+        await fetch("https://ligaapi.onrender.com/team").then(response => response.json()).then(response => setAllTeams(response))
     }
 
     const getMatchs = async() => {
-        await fetch("http://localhost:3001/game").then(response => response.json()).then(response => setAllMatchs(response))
+        await fetch("https://ligaapi.onrender.com/game").then(response => response.json()).then(response => setAllMatchs(response))
     }
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const Partidos = () => {
     const createMatchSend = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/game/create", {
+        const response = await fetch("https://ligaapi.onrender.com/game/create", {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -61,7 +61,7 @@ const Partidos = () => {
     const modifyMatch = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/game/", {
+        const response = await fetch("https://ligaapi.onrender.com/game/", {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -90,7 +90,7 @@ const Partidos = () => {
           })
           .then(async(willDelete) => {
             if (willDelete) {
-                const response = await fetch(`http://localhost:3001/game/${selectedMatch.id}`, {
+                const response = await fetch(`https://ligaapi.onrender.com/game/${selectedMatch.id}`, {
                     method: 'DELETE',
                     headers: {
                       'Accept': 'application/json',

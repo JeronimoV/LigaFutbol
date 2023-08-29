@@ -11,7 +11,7 @@ const PlayerInfo = () => {
   const params = usePathname();
 
   const getPlayer = async () => {
-    await fetch(`http://localhost:3001/player/${params.split("/")[2]}`)
+    await fetch(`https://ligaapi.onrender.com/player/${params.split("/")[2]}`)
       .then((response) => response.json())
       .then((response) => setPlayerData(response));
   };

@@ -42,7 +42,7 @@ const Login = () => {
 
   const submitData = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3001/user/", {
+    await fetch("https://ligaapi.onrender.com/user/", {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -12,14 +12,14 @@ const TeamInfo = () => {
   const params = usePathname();
 
   const getTeam = async () => {
-    await fetch(`http://localhost:3001/team/${params.split("/")[2]}`)
+    await fetch(`https://ligaapi.onrender.com/team/${params.split("/")[2]}`)
       .then((response) => response.json())
       .then((response) => setTeamData(response));
   };
 
   const getPlayers = async () => {
     if (teamData && teamData.id) {
-      await fetch(`http://localhost:3001/player/team/${teamData.id}`)
+      await fetch(`https://ligaapi.onrender.com/player/team/${teamData.id}`)
         .then((response) => response.json())
         .then((response) =>
           response.sort((a, b) => {

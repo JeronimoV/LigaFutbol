@@ -7,7 +7,7 @@ const MatchPanel = () => {
     const [allMatchs, setAllMatchs] = useState(null)
 
     const getMatchs = async() => {
-        await fetch("http://localhost:3001/game").then(response => response.json()).then(response => response.sort((a,b) => {if(a.points > b.points){return -1}else{return 1}})).then(response => setAllMatchs(response))
+        await fetch("https://ligaapi.onrender.com/game").then(response => response.json()).then(response => response.sort((a,b) => {if(a.points > b.points){return -1}else{return 1}})).then(response => setAllMatchs(response))
       }
 
       useEffect(() => {

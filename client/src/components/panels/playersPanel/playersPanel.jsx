@@ -8,7 +8,7 @@ const PlayersPanel = () => {
     const [allPlayers, setAllPlayers] = useState(null)
 
     const getPlayers = async() => {
-        await fetch("http://localhost:3001/player").then(response => response.json()).then(response => response.sort((a,b) => {if((a.goals*2 + a.assist) > b.goals*2 + b.assist){return -1}else{return 1}})).then(response => setAllPlayers(response))
+        await fetch("https://ligaapi.onrender.com/player").then(response => response.json()).then(response => response.sort((a,b) => {if((a.goals*2 + a.assist) > b.goals*2 + b.assist){return -1}else{return 1}})).then(response => setAllPlayers(response))
       }
 
       useEffect(() => {

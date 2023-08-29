@@ -17,10 +17,10 @@ const GamesCard = ({data}) => {
   const [show, setShow] = useState("none")
 
   const getTeamsPlayers = async() => {
-    await fetch(`http://localhost:3001/player/team/${data.FirstTeam.id}`)
+    await fetch(`https://ligaapi.onrender.com/player/team/${data.FirstTeam.id}`)
       .then((response) => response.json())
       .then((response) => setFirstTeamPlayers(response));
-    await fetch(`http://localhost:3001/player/team/${data.SecondTeam.id}`)
+    await fetch(`https://ligaapi.onrender.com/player/team/${data.SecondTeam.id}`)
       .then((response) => response.json())
       .then((response) => setSecondTeamPlayers(response));
   }
@@ -123,7 +123,7 @@ const GamesCard = ({data}) => {
     const winnerId = winner === data.FirstTeam.name ? data.FirstTeam.id : data.SecondTeam.name === winner ? data.SecondTeam.name : null
     const loserId = winner === data.SecondTeam.name ? data.SecondTeam.id : data.FirstTeam.name === winner ? data.FirstTeam.name : null
     const dataToSend = {allGoals: inputGoalsCopy, winner: winnerId, loser: loserId, firstTeamId: data.FirstTeam.id, secondTeamId: data.SecondTeam.id}
-    await fetch("http://localhost:3001/game/result", {
+    await fetch("https://ligaapi.onrender.com/game/result", {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -138,7 +138,7 @@ const GamesCard = ({data}) => {
             title: "Resultado definido!",
             text: "Si te equivocaste, deberas modificarlo manualmente en el panel de admin",
             icon: "success",})).then(response => setShow("none")).then(async response => 
-              await fetch(`http://localhost:3001/game/${data.id}`, {
+              await fetch(`https://ligaapi.onrender.com/game/${data.id}`, {
               method: 'DELETE',
               headers: {
                 'Accept': 'application/json',

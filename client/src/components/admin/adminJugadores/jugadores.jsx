@@ -14,11 +14,11 @@ const Jugadores = () => {
     const [dataToSend, setDataToSend] = useState(null)
 
     const getPlayers = async() => {
-        await fetch("http://localhost:3001/player").then(response => response.json()).then(response => setAllPlayers(response))
+        await fetch("https://ligaapi.onrender.com/player").then(response => response.json()).then(response => setAllPlayers(response))
     }
 
     const getTeams = async() => {
-        await fetch("http://localhost:3001/team").then(response => response.json()).then(response => setAllTeams(response))
+        await fetch("https://ligaapi.onrender.com/team").then(response => response.json()).then(response => setAllTeams(response))
     }
 
     useEffect(() => {
@@ -43,7 +43,7 @@ const Jugadores = () => {
     const createPlayerSend = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/player/create", {
+        const response = await fetch("https://ligaapi.onrender.com/player/create", {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -70,7 +70,7 @@ const Jugadores = () => {
     const modifyPlayer = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/player/", {
+        const response = await fetch("https://ligaapi.onrender.com/player/", {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -97,7 +97,7 @@ const Jugadores = () => {
     const modifyPlayerPoints = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/player/goals", {
+        const response = await fetch("https://ligaapi.onrender.com/player/goals", {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -126,7 +126,7 @@ const Jugadores = () => {
           })
           .then(async(willDelete) => {
             if (willDelete) {
-                const response = await fetch(`http://localhost:3001/player/${selectedPlayer.name}`, {
+                const response = await fetch(`https://ligaapi.onrender.com/player/${selectedPlayer.name}`, {
                     method: 'DELETE',
                     headers: {
                       'Accept': 'application/json',

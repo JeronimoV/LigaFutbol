@@ -1,7 +1,6 @@
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const player = require("./models/player");
 
 const sequelize = new Sequelize(
   "postgres://postgres:paj@erovich@localhost:5432/ligatuma"

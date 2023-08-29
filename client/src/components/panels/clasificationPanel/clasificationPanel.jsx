@@ -8,7 +8,7 @@ const ClasificationPanel = () => {
     const [allTeams, setAllTeams] = useState(null)
 
     const getTeams = async() => {
-        await fetch("http://localhost:3001/team").then(response => response.json()).then(response => response.sort((a,b) => {if(a.points > b.points){return -1}else{return 1}})).then(response => setAllTeams(response))
+        await fetch("https://ligaapi.onrender.com/team").then(response => response.json()).then(response => response.sort((a,b) => {if(a.points > b.points){return -1}else{return 1}})).then(response => setAllTeams(response))
       }
 
       useEffect(() => {

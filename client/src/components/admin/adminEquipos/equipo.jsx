@@ -15,7 +15,7 @@ const Equipo = () => {
     const [dataToSend, setDataToSend] = useState(null)
 
     const getTeams = async() => {
-        await fetch("http://localhost:3001/team").then(response => response.json()).then(response => setAllTeams(response))
+        await fetch("https://ligaapi.onrender.com/team").then(response => response.json()).then(response => setAllTeams(response))
     }
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Equipo = () => {
     const createTeamSend = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/team/create", {
+        const response = await fetch("https://ligaapi.onrender.com/team/create", {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -66,7 +66,7 @@ const Equipo = () => {
     const modifyTeamSend = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/team/", {
+        const response = await fetch("https://ligaapi.onrender.com/team/", {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -93,7 +93,7 @@ const Equipo = () => {
     const modifyTeamPointsSend = async(e) => {
         console.log(dataToSend);
         e.preventDefault()
-        const response = await fetch("http://localhost:3001/team/points", {
+        const response = await fetch("https://ligaapi.onrender.com/team/points", {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -122,7 +122,7 @@ const Equipo = () => {
           })
           .then(async(willDelete) => {
             if (willDelete) {
-                const response = await fetch(`http://localhost:3001/team/${selectedTeam.name}`, {
+                const response = await fetch(`https://ligaapi.onrender.com/team/${selectedTeam.name}`, {
                     method: 'DELETE',
                     headers: {
                       'Accept': 'application/json',

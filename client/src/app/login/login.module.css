@@ -19,6 +19,10 @@
 }
 
 .head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     bottom: 2vw;
     opacity: 0.7;
@@ -57,4 +61,48 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.250);
     margin-top: 1vw;
     cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .formDiv{
+        height: 50vw;
+        width: 40vw;
+    }
+    .title{
+        font-size: 5vw;
+    }
+    .subTitle{
+        font-size: 2vw;
+    }
+    .form input{
+        height: 4vw;
+        width: 35vw;
+        font-size: 1.5vw;
+    }
+    .form button{
+        height: 4vw;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formDiv{
+        height: 75vw;
+        width: 75vw;
+    }
+    .title{
+        font-size: 6vw;
+    }
+    .subTitle{
+        font-size: 3vw;
+    }
+    .form input{
+        height: 6vw;
+        width: 65vw;
+        font-size: 2vw;
+    }
+    .form button{
+        height: 6vw;
+        font-size: 3vw;
+    }
 }

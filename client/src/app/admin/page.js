@@ -2,9 +2,22 @@
 
 import { useState } from "react";
 import styles from "./admin.module.css";
-import Equipo from "@/components/admin/adminEquipos/equipo";
-import Jugadores from "@/components/admin/adminJugadores/jugadores";
-import Partidos from "@/components/admin/adminPartidos/partidos";
+import dynamic from "next/dynamic";
+const Jugadores = dynamic(
+  () => import("@/components/admin/adminJugadores/jugadores"),
+  {
+    ssr: false,
+  }
+);
+const Partidos = dynamic(
+  () => import("@/components/admin/adminPartidos/partidos"),
+  {
+    ssr: false,
+  }
+);
+const Equipo = dynamic(() => import("@/components/admin/adminEquipos/equipo"), {
+  ssr: false,
+});
 
 const Admin = () => {
   const [panelSelection, setPanelSelection] = useState(null);

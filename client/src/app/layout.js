@@ -1,6 +1,10 @@
 import Head from "next/head";
 import "./globals.css";
-import NavBar from "@/components/navbar/navbarComponent";
+import dynamic from "next/dynamic";
+
+const NavBar = dynamic(() => import("../components/navbar/navbarComponent"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "Create Next App",

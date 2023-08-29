@@ -11,7 +11,7 @@ const NavBar = () => {
 
 
     useEffect(() => {
-      if (typeof window != "undefined") {
+      if (window && typeof window != "undefined") {
         setIsWindow(true);
       }
     }, []);

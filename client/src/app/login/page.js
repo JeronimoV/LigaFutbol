@@ -54,7 +54,7 @@ const Login = () => {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error("Algo salio mal");
+          throw new Error(response.json());
         }
       })
       .then(

@@ -10,7 +10,10 @@ const login = async (req, res) => {
     if (!email || !password) {
       throw new Error("Faltan datos!");
     }
-    const actualUser = await User.findOne({ where: { email: email } });
+
+    const actualEmail = email.toLowerCase();
+
+    const actualUser = await User.findOne({ where: { email: actualEmail } });
 
     if (!actualUser) {
       throw new Error("El email no existe!");
@@ -34,7 +37,10 @@ const register = async (req, res) => {
     if (!email || !password) {
       throw new Error("Faltan datos!");
     }
-    const actualUser = await User.findOne({ where: { email: email } });
+
+    const actualEmail = email.toLowerCase();
+
+    const actualUser = await User.findOne({ where: { email: actualEmail } });
 
     if (actualUser) {
       throw new Error("El email ya existe!");
@@ -43,7 +49,7 @@ const register = async (req, res) => {
     const response = await encryptPassword(password);
 
     const newUser = await User.create({
-      email,
+      email: actualEmail,
       password: response,
       admin: true,
     });

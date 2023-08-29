@@ -19,13 +19,11 @@
 }
 
 .teamInfo{
-    max-width: 70%;
     width: fit-content;
     display: flex;
     align-items: center;
     margin-left: 4vw;
     gap: 1vw;
-    overflow: auto;
 }
 
 .teamName{
@@ -69,6 +67,12 @@
     margin-right: 5vw;
     font-weight: bolder;
     opacity: 0.5;
+}
+
+.adminDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttonAdmin{
@@ -247,21 +251,21 @@
         margin-top: 9vw;
     }
     .teamPicture{
-        height: 4vw;
-        width: 4vw;
+        height: 8vw;
+        width: 8vw;
     }
     .gameInfo{
-        width: 30vw;
+        width: fit-content;
     }
     .gameInfo p{
-        font-size: 1.5vw;
+        font-size: 3vw;
     }
     .button{
         width: 6vw;
         font-size: 1.3vw;
     }
     .teamInfo p{
-        font-size: 2vw;
+        font-size: 4vw;
     }
     .addButton button{
         font-size: 3vw;
@@ -273,10 +277,28 @@
         width: fit-content;
     }
     .buttonAdmin{
-        font-size: 1vw;
+        font-size: 3vw;
+        height: 7vw;
+        width: 15vw;
+        left: 17vw;
+        margin-top: 50vw;
     }
     .button{
-        font-size: 1vw;
+        width: fit-content;
+        font-size: 3vw;
+    }
+    .clasificacionCard{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    }
+    .icons{
+        height: 4vw;
+        width: 4vw;
     }
     .clasificacionCard .division{
         font-size: 3vw;
@@ -309,5 +331,11 @@
         height: 5vw;
         width: 5vw;
         font-size: 3vw;
+    }
+    .vs{
+        font-weight: bolder;
+        opacity: 0.5;
+        margin-left: 2vw;
+        margin-right: 2vw;
     }
 }

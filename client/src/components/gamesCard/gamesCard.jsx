@@ -15,6 +15,24 @@ const GamesCard = ({data}) => {
   const [inputAssist, setInputAssist] = useState([])
   const [winner, setWinner] = useState("")
   const [show, setShow] = useState("none")
+  const [isWindow, setIsWindow] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    if (typeof window != "undefined") {
+      setIsWindow(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isWindow) {
+      const response = localStorage.getItem("admin");
+      console.log(response);
+      if (response && response === "true") {
+        setIsAdmin(true);
+      }
+    }
+  }, [isWindow]);
 
   const getTeamsPlayers = async() => {
     await fetch(`https://ligaapi.onrender.com/player/team/${data.FirstTeam.id}`)
@@ -160,6 +178,8 @@ const GamesCard = ({data}) => {
     return(
         <div className={styles.clasification}>
         <div className={styles.clasificacionCard}>
+          {isAdmin ?
+          <div className={styles.adminDiv}>
           <button onClick={() => show === "none" ? setShow("block") : setShow("none")} className={styles.buttonAdmin}>Definir resultado</button>
           <div className={styles.adminPanel} style={{display:show}}>
           <button className={styles.close} name="newAssist" onClick={(e) => setShow("none")}>X</button>
@@ -209,6 +229,9 @@ const GamesCard = ({data}) => {
             <button onClick={sendData} className={styles.send}>Definir Resultado</button>
           </div>
           </div>
+          </div>
+          : null
+}
           <div className={styles.teamInfo}>
             <img className={styles.teamPicture} src={data?.FirstTeam?.picture} />
             <p className={styles.teamName}>{data?.FirstTeam?.name}</p>

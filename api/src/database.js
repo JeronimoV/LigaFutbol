@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const sequelize = new Sequelize(
-  "postgres://ligafutbol_user:of6QzXOhBGrk5g9DlAbGG1A5JckHRGWy@dpg-cjn2h5kdfrcc73dne9gg-a.oregon-postgres.render.com/ligafutbol"
+  "postgres://ligafutbol_user:of6QzXOhBGrk5g9DlAbGG1A5JckHRGWy@dpg-cjn2h5kdfrcc73dne9gg-a.oregon-postgres.render.com/ligafutbol?ssl=true"
 );
 
 const modelList = [];

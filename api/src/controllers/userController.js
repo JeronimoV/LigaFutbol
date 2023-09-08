@@ -26,7 +26,7 @@ const login = async (req, res) => {
       throw new Error("El email y la contraseña no coinciden!");
     }
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -60,7 +60,7 @@ const register = async (req, res) => {
       throw new Error("Algo salio mal!");
     }
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };

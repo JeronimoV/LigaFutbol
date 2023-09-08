@@ -19,7 +19,7 @@ const PlayersPanel = () => {
         getPlayers()
       }
 
-      console.log(allPlayers);
+      (allPlayers);
 
     return(
         <div>

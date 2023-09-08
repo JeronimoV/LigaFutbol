@@ -41,7 +41,7 @@ const Jugadores = () => {
     }
 
     const createPlayerSend = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/player/create", {
             method: 'POST',
@@ -64,11 +64,11 @@ const Jugadores = () => {
             icon: "error",}))
           setOptionSelected(null)
           setDataToSend(null)
-          console.log("create team", response);
+          ("create team", response);
     }
 
     const modifyPlayer = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/player/", {
             method: 'PUT',
@@ -95,7 +95,7 @@ const Jugadores = () => {
     }
 
     const modifyPlayerPoints = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/player/goals", {
             method: 'PUT',
@@ -148,7 +148,7 @@ const Jugadores = () => {
           });
     }
 
-    console.log(allPlayers);
+    (allPlayers);
 
     const selectTeamInput = async (e) => {
         setOptionSelected(e.target.name)

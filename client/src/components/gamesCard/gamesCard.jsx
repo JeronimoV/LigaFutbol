@@ -7,7 +7,7 @@ import swal from "sweetalert";
 
 const GamesCard = ({data}) => {
 
-  console.log(data);
+  (data);
 
   const [firstTeamPlayers, setFirstTeamPlayers] = useState(null)
   const [secondTeamPlayers, setSecondTeamPlayers] = useState(null)
@@ -27,7 +27,7 @@ const GamesCard = ({data}) => {
   useEffect(() => {
     if (isWindow) {
       const response = localStorage.getItem("admin");
-      console.log(response);
+      (response);
       if (response && response === "true") {
         setIsAdmin(true);
       }
@@ -74,7 +74,7 @@ const GamesCard = ({data}) => {
   }
 
   const inputHandler = (e,index) => {
-    console.log("entre");
+    ("entre");
     const inputCopy = [...inputGoals]
     const inputAssistCopy = [...inputAssist]
     if(e.target.name === "goal"){
@@ -173,7 +173,7 @@ const GamesCard = ({data}) => {
     return <p>Loading...</p>
   }
 
-  console.log(inputGoals, inputAssist, winner);
+  (inputGoals, inputAssist, winner);
 
     return(
         <div className={styles.clasification}>

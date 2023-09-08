@@ -18,7 +18,7 @@ const getAllMatchs = async (req, res) => {
     });
     res.status(200).json(allMatchs);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -35,7 +35,7 @@ const getMatch = async (req, res) => {
     }
     res.status(200).json(actualMatch);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -73,7 +73,7 @@ const createMatch = async (req, res) => {
     }
     res.status(200).json(newMatch);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -95,7 +95,7 @@ const modifyMatch = async (req, res) => {
     });
     res.status(200).json("Partido actualizado con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -187,7 +187,7 @@ const matchResult = async (req, res) => {
 
     res.status(200).json("Partido definido con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -205,7 +205,7 @@ const deleteMatch = async (req, res) => {
     await actualMatch.destroy();
     res.status(200).json("Partido eliminado con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };

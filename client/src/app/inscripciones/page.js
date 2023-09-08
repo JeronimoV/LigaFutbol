@@ -8,7 +8,7 @@ const Inscripciones = () => {
         Para inscribirte al torneo deberas comunicarte por WhatsApp al siguiente
         numero
       </p>
-      <p className={styles.number}>Numero</p>
+      <p className={styles.number}>11 6023-0965</p>
     </div>
   );
 };

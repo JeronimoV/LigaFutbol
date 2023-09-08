@@ -5,7 +5,7 @@ const getAllPlayer = async (req, res) => {
     const actualPlayer = await Player.findAll();
     res.status(200).json(actualPlayer);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -20,7 +20,7 @@ const getAllTeamPlayers = async (req, res) => {
 
     res.status(200).json(actualPlayer);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -40,7 +40,7 @@ const getPlayer = async (req, res) => {
     }
     res.status(200).json(actualPlayer);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -63,7 +63,7 @@ const createPlayer = async (req, res) => {
     }
     res.status(200).json(newPlayer);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -93,7 +93,7 @@ const modifyPlayer = async (req, res) => {
       res.status(200).json(updatedPlayer);
     }
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -111,7 +111,7 @@ const modifyPlayerGoals = async (req, res) => {
     });
     res.status(200).json("Jugador actualizado con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -129,7 +129,7 @@ const deletePlayer = async (req, res) => {
     await actualPlayer.destroy();
     res.status(200).json("Jugador eliminado con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };

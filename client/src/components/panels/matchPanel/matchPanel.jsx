@@ -18,7 +18,7 @@ const MatchPanel = () => {
         getMatchs()
       }
 
-      console.log(allMatchs);
+      (allMatchs);
 
     return(
         <div>

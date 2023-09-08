@@ -5,7 +5,7 @@ const getAllTeams = async (req, res) => {
     const allTeams = await Team.findAll();
     res.status(200).json(allTeams);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -22,7 +22,7 @@ const getTeam = async (req, res) => {
     }
     res.status(200).json(actualTeam);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -42,7 +42,7 @@ const createTeam = async (req, res) => {
     }
     res.status(200).json(newTeam);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -50,7 +50,7 @@ const createTeam = async (req, res) => {
 const modifyTeam = async (req, res) => {
   const { id, name, picture } = req.body;
   try {
-    console.log(name, picture);
+    name, picture;
     if (!name && !picture) {
       throw new Error("No has hecho cambios!");
     }
@@ -61,7 +61,7 @@ const modifyTeam = async (req, res) => {
     });
     res.status(200).json(updatedTeam);
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -79,7 +79,7 @@ const modifyTeamPoints = async (req, res) => {
     });
     res.status(200).json("Equipo actualizado con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };
@@ -97,7 +97,7 @@ const deleteTeam = async (req, res) => {
     await actualTeam.destroy();
     res.status(200).json("Equipo eliminado con exito!");
   } catch (error) {
-    console.log(error);
+    error;
     res.status(400).json(error.message);
   }
 };

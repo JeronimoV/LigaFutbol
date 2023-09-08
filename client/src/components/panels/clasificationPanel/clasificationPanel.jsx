@@ -19,7 +19,7 @@ const ClasificationPanel = () => {
         getTeams()
       }
 
-      console.log(allTeams);
+      (allTeams);
 
     return(
         <div>

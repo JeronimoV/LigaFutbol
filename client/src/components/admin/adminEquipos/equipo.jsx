@@ -37,7 +37,7 @@ const Equipo = () => {
     }
 
     const createTeamSend = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/team/create", {
             method: 'POST',
@@ -60,11 +60,11 @@ const Equipo = () => {
             icon: "error",}))
           setOptionSelected(null)
           setDataToSend(null)
-          console.log("create team", response);
+          ("create team", response);
     }
 
     const modifyTeamSend = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/team/", {
             method: 'PUT',
@@ -91,7 +91,7 @@ const Equipo = () => {
     }
 
     const modifyTeamPointsSend = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/team/points", {
             method: 'PUT',
@@ -145,15 +145,15 @@ const Equipo = () => {
     }
 
     const selectTeamInput = async (e) => {
-        console.log("esteee", e.target.value);
+        ("esteee", e.target.value);
         setOptionSelected(e.target.name)
         const team = await allTeams.find(value => value.name === e.target.value)
-        console.log("esteee", team);
+        ("esteee", team);
         setSelectedTeam(team)
         setDataToSend({...dataToSend, id: team.id})
     }
 
-    console.log(optionSelected);
+    (optionSelected);
 
     return(
         <div className={styles.container}>

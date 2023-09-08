@@ -13,7 +13,7 @@ conn
   .sync({ force: false })
   .then(() => {
     server.listen(3001, () => {
-      console.log("Server connected");
+      ("Server connected");
     });
   })
-  .catch((err) => console.log(err));
+  .catch((err) => err);

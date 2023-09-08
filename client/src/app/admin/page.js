@@ -33,7 +33,7 @@ const Admin = () => {
   useEffect(() => {
     if (isWindow) {
       const response = localStorage.getItem("admin");
-      console.log(response);
+      response;
       if (response && response === "true") {
         setIsAdmin(true);
       }

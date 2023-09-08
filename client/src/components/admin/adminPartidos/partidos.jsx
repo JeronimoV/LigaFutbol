@@ -31,7 +31,7 @@ const Partidos = () => {
     }
 
     const createMatchSend = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/game/create", {
             method: 'POST',
@@ -45,13 +45,13 @@ const Partidos = () => {
           }else{
             throw new Error("Algo salio mal, asegurate de que no exista otro partido con los mismos equipos, si el error sigue avisame.")
           }}).then(response => {
-            console.log(response);
+            (response);
             const allMatchUpdated = allMatchs.filter(value => value.id !== dataToSend.id)
             allMatchUpdated.push(response)
             setAllMatchs(allMatchUpdated)
             setOptionSelected(null)
             setDataToSend(null)
-            console.log("create team", response);
+            ("create team", response);
         }).catch(async err => await swal({
             title: "Algo salio mal...",
             text: `${err}`,
@@ -59,7 +59,7 @@ const Partidos = () => {
     }
 
     const modifyMatch = async(e) => {
-        console.log(dataToSend);
+        (dataToSend);
         e.preventDefault()
         const response = await fetch("https://ligaapi.onrender.com/game/", {
             method: 'PUT',
@@ -135,7 +135,7 @@ const Partidos = () => {
         return matchNameGenerated}
     }
 
-    console.log(dataToSend);
+    (dataToSend);
 
     return(
         <div className={styles.container}>

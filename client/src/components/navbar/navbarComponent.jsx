@@ -34,14 +34,6 @@ const NavBar = () => {
                 <div className={styles.select}></div>
                 <Link className={styles.link} href={"/clasificacion"}>Clasificacion</Link>
             </div>
-            <div className={params.split("/")[1] === "jugadores" ? styles.selectDivActivated : styles.selectDiv}>
-                <div className={styles.select}></div>
-                <Link className={styles.link} href={"/jugadores"} >Mejores Jugadores</Link>
-            </div>
-            <div className={params.split("/")[1] === "partidos" ? styles.selectDivActivated : styles.selectDiv}>
-                <div className={styles.select}></div>
-                <Link className={styles.link} href={"/partidos"} >Partidos</Link>
-            </div>
             <div className={params.split("/")[1] === "inscripciones" ? styles.selectDivActivated : styles.selectDiv}>
                 <div className={styles.select}></div>
                 <Link className={styles.link} href={"/inscripciones"} >Inscripciones</Link>

@@ -1,82 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./login.module.css";
 import swal from "sweetalert";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const [isWindow, setIsWindow] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    if (typeof window != "undefined") {
-      setIsWindow(true);
-    }
-  }, []);
+  const router = useRouter();
 
-  useEffect(() => {
-    if (isWindow) {
-      const response = localStorage.getItem("admin");
-      response;
-      if (response && response === "true") {
-        setIsAdmin(true);
-      }
-    }
-  }, [isWindow]);
+  const user = "jeronimoevilar@outlook.com";
+  const contraseña = "jero2003";
 
-  useEffect(() => {
-    if (isAdmin) {
-      localStorage.clear();
-      window.location.reload();
-    }
-  }, [isAdmin]);
-
-  const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const inputHandler = (e) => {
-    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  const handlerInput = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const submitData = async (e) => {
+  const handlerLogin = async (e) => {
     e.preventDefault();
-    await fetch("https://ligaapi.onrender.com/user/", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(loginData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error(response.json());
-        }
-      })
-      .then(
-        async (response) =>
-          await swal({
-            title: "Bienvenido",
-            text: `Haz iniciado sesion correctamente`,
-            icon: "success",
-          })
-      )
-      .then((response) => {
-        localStorage.setItem("admin", "true");
-        window.location.href = "/clasificacion";
-      })
-      .catch(
-        async (err) =>
-          await swal({
-            title: "Algo salio mal...",
-            text: `${err}`,
-            icon: "error",
-          })
-      );
+    if (
+      data.email.toUpperCase() === user.toUpperCase() &&
+      data.password.toUpperCase() === contraseña.toUpperCase()
+    ) {
+      await swal({
+        title: "Bienvenido",
+        text: `Usuario logueado correctamente!`,
+        icon: "success",
+      }).then((response) => router.push("/clasificacion"));
+    } else {
+      await swal({
+        title: "Algo salio mal...",
+        text: `La contraseña o el email tienen un error!`,
+        icon: "error",
+      });
+    }
   };
 
   return (
@@ -86,18 +44,12 @@ const Login = () => {
           <p className={styles.title}>Inicia Sesion</p>
           <p className={styles.subTitle}>Por favor, ingrese sus datos</p>
         </div>
-        <form onSubmit={submitData} className={styles.form}>
-          <input
-            onChange={inputHandler}
-            name="email"
-            value={loginData.email}
-            placeholder="Email"
-          />
+        <form onSubmit={handlerLogin} className={styles.form}>
+          <input onChange={handlerInput} name="email" placeholder="Email" />
           <input
             type="password"
-            onChange={inputHandler}
+            onChange={handlerInput}
             name="password"
-            value={loginData.password}
             placeholder="Contraseña"
           />
           <button>Ingresar</button>

@@ -71,6 +71,10 @@
     width: 80vw;
 }
 
+.clasificationImage{
+    width: 80vw;
+}
+
 @media screen and (max-width: 500px) {
     .container{
         margin-top: 5vw;

@@ -19,6 +19,7 @@ const Login = () => {
 
   const handlerLogin = async (e) => {
     e.preventDefault();
+    localStorage.clear();
     if (
       data.email.toUpperCase() === user.toUpperCase() &&
       data.password.toUpperCase() === contraseña.toUpperCase()
@@ -27,13 +28,15 @@ const Login = () => {
         title: "Bienvenido",
         text: `Usuario logueado correctamente!`,
         icon: "success",
-      }).then((response) => router.push("/clasificacion"));
+      })
+        .then((response) => localStorage.setItem("admin", "true"))
+        .then((response) => router.push("/clasificacion"));
     } else {
       await swal({
         title: "Algo salio mal...",
         text: `La contraseña o el email tienen un error!`,
         icon: "error",
-      });
+      }).then((response) => localStorage.clear());
     }
   };
 

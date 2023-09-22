@@ -44,7 +44,7 @@ const Clasificacion = (e) => {
       <img className={styles.image} src="clasificacion.png" />
       <p className={styles.title}>Tabla de clasificacion</p>
       {isAdmin ? (
-        <div>
+        <div className={styles.admin}>
           <p>Actualizar tabla</p>
           <input type="file" onChange={uploadImage} />
         </div>

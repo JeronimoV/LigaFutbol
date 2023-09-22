@@ -68,11 +68,16 @@
 
 .title{
     margin-top: 1vw;
+    margin-bottom: 1vw;
     width: 80vw;
 }
 
 .clasificationImage{
     width: 80vw;
+}
+
+.admin{
+    margin-bottom: 1vw;
 }
 
 @media screen and (max-width: 500px) {

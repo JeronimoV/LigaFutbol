@@ -21,6 +21,7 @@ const Login = () => {
     e.preventDefault();
     localStorage.clear();
     if (
+      data &&
       data.email.toUpperCase() === user.toUpperCase() &&
       data.password.toUpperCase() === contraseña.toUpperCase()
     ) {

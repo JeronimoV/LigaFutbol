@@ -40,10 +40,7 @@ const NavBar = () => {
             </div>
             {
                 isAdmin ? 
-                <div className={params.split("/")[1] === "admin" ? styles.selectDivActivated : styles.selectDiv}>
-                   <div className={styles.select}></div>
-                   <Link className={styles.link} href={"/admin"} >Admin Panel</Link>
-                </div>: <Link className={styles.linkLogin} href={"/login"}>Ingresar</Link>
+                null: <Link className={styles.linkLogin} href={"/login"}>Ingresar</Link>
             }
         </div>
     )

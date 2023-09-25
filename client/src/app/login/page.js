@@ -10,8 +10,8 @@ const Login = () => {
 
   const router = useRouter();
 
-  const user = "jeronimoevilar@outlook.com";
-  const contraseña = "jero2003";
+  const user = "burcez@hotmail.com";
+  const contraseña = "gambeta2023";
 
   const handlerInput = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
